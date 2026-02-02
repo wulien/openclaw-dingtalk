@@ -79,6 +79,26 @@ openclaw gateway --verbose
 - Send a message to the DingTalk bot.
 - The plugin should receive it via Stream mode and respond through OpenClaw.
 
+## Standalone connectivity test (no OpenClaw)
+
+Use the standalone script to validate Stream mode connectivity first.
+
+```bash
+set DINGTALK_CLIENT_ID=your_app_key
+set DINGTALK_CLIENT_SECRET=your_app_secret
+node test-dingtalk-standalone.mjs
+```
+
+If you are on PowerShell:
+
+```powershell
+$env:DINGTALK_CLIENT_ID="your_app_key"
+$env:DINGTALK_CLIENT_SECRET="your_app_secret"
+node test-dingtalk-standalone.mjs
+```
+
+Send a message to the bot. You should see the incoming message logged and an echo reply.
+
 ## Configuration Reference
 
 - enabled: boolean, enable/disable the channel
