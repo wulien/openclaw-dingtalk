@@ -1,4 +1,20 @@
-﻿import { DWClient, TOPIC_ROBOT, EventAck } from "dingtalk-stream";
+﻿import fs from "fs";
+import path from "path";
+import { DWClient, TOPIC_ROBOT, EventAck } from "dingtalk-stream";
+
+const envPath = path.resolve(process.cwd(), ".env");
+if (fs.existsSync(envPath)) {
+  const raw = fs.readFileSync(envPath, "utf8");
+  for (const line of raw.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const idx = trimmed.indexOf("=");
+    if (idx === -1) continue;
+    const key = trimmed.slice(0, idx).trim();
+    const value = trimmed.slice(idx + 1).trim().replace(/^"|"$/g, "");
+    if (!process.env[key]) process.env[key] = value;
+  }
+}
 
 const clientId = process.env.DINGTALK_CLIENT_ID;
 const clientSecret = process.env.DINGTALK_CLIENT_SECRET;
