@@ -99,6 +99,25 @@ node test-dingtalk-standalone.mjs
 
 Send a message to the bot. You should see the incoming message logged and an echo reply.
 
+## Standalone single-chat send test
+
+Use this script to verify proactive single-chat sending (robotCode required).
+
+```powershell
+$env:DINGTALK_CLIENT_ID="your_app_key"
+$env:DINGTALK_CLIENT_SECRET="your_app_secret"
+$env:DINGTALK_ROBOT_CODE="your_robot_code"
+$env:DINGTALK_USER_ID="target_user_id"
+node test-dingtalk-send-single.mjs
+```
+
+You can override the message content:
+
+```powershell
+$env:DINGTALK_TEXT="hello"
+node test-dingtalk-send-single.mjs
+```
+
 ## Configuration Reference
 
 - enabled: boolean, enable/disable the channel

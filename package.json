@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test:standalone": "node test-dingtalk-standalone.mjs"
+    "test:standalone": "node test-dingtalk-standalone.mjs",
+    "test:single": "node test-dingtalk-send-single.mjs"
   },
   "files": [
     "index.ts",
