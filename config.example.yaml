@@ -1,0 +1,47 @@
+﻿# DingTalk plugin config example
+
+channels:
+  dingtalk:
+    enabled: true
+    clientId: "your_app_key_here"
+    clientSecret: "your_app_secret_here"
+    robotCode: "your_robot_code_here"
+    dm:
+      policy: pairing
+      allowFrom:
+        - "user_staff_id_1"
+        - "user_staff_id_2"
+    groupPolicy: open
+    groups:
+      "group_conversation_id_1":
+        enabled: true
+        requireMention: false
+        toolPolicy: "default"
+
+# Multi-account example
+#channels:
+#  dingtalk:
+#    accounts:
+#      work:
+#        enabled: true
+#        name: "Work Bot"
+#        clientId: "work_app_key"
+#        clientSecret: "work_app_secret"
+#        robotCode: "work_robot_code"
+#        dm:
+#          policy: pairing
+#          allowFrom: []
+#        groupPolicy: open
+#      personal:
+#        enabled: true
+#        name: "Personal Bot"
+#        clientId: "personal_app_key"
+#        clientSecret: "personal_app_secret"
+#        robotCode: "personal_robot_code"
+#        dm:
+#          policy: open
+#        groupPolicy: allowlist
+#        groups:
+#          "personal_group_id":
+#            enabled: true
+#            requireMention: false

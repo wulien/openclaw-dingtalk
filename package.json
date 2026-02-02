@@ -1,0 +1,65 @@
+﻿{
+  "name": "@wulien/openclaw-dingtalk",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "OpenClaw DingTalk channel plugin (Stream mode).",
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "files": [
+    "index.ts",
+    "src",
+    "skills",
+    "openclaw.plugin.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wulien/openclaw-dingtalk.git"
+  },
+  "keywords": [
+    "openclaw",
+    "dingtalk",
+    "dingding",
+    "chatbot",
+    "ai",
+    "claude"
+  ],
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "channel": {
+      "id": "dingtalk",
+      "label": "DingTalk",
+      "selectionLabel": "DingTalk",
+      "docsPath": "/channels/dingtalk",
+      "docsLabel": "dingtalk",
+      "blurb": "DingTalk enterprise messaging.",
+      "aliases": [
+        "dingding",
+        "dd"
+      ],
+      "order": 75
+    },
+    "install": {
+      "npmSpec": "@wulien/openclaw-dingtalk",
+      "localPath": ".",
+      "defaultChoice": "npm"
+    }
+  },
+  "dependencies": {
+    "dingtalk-stream": "^2.1.4",
+    "undici": "^6.21.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "openclaw": "^2026.1.29",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.0"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.1.29"
+  }
+}

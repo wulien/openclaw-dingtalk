@@ -1,0 +1,5 @@
+﻿channels:
+  dingtalk:
+    enabled: true
+    clientId: "your_app_key_here"
+    clientSecret: "your_app_secret_here"
