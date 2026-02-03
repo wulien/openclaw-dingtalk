@@ -1,32 +1,41 @@
-﻿{
-  "name": "@wulien/openclaw-dingtalk",
+{
+  "name": "dingtalk",
   "version": "0.1.0",
   "type": "module",
-  "description": "OpenClaw DingTalk channel plugin (Stream mode).",
+  "description": "OpenClaw DingTalk channel plugin with Stream mode support",
   "license": "MIT",
-  "scripts": {
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test:standalone": "node test-dingtalk-standalone.mjs",
-    "test:single": "node test-dingtalk-send-single.mjs"
-  },
-  "files": [
-    "index.ts",
-    "src",
-    "skills",
-    "openclaw.plugin.json"
-  ],
+  "author": "wulien",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wulien/openclaw-dingtalk.git"
   },
+  "bugs": {
+    "url": "https://github.com/wulien/openclaw-dingtalk/issues"
+  },
+  "homepage": "https://github.com/wulien/openclaw-dingtalk#readme",
   "keywords": [
     "openclaw",
     "dingtalk",
     "dingding",
     "chatbot",
     "ai",
-    "claude"
+    "claude",
+    "stream"
   ],
+  "files": [
+    "index.ts",
+    "src",
+    "skills",
+    "openclaw.plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:standalone": "node test-dingtalk-standalone.mjs",
+    "test:single": "node test-dingtalk-send-single.mjs",
+    "check-encoding": "bash scripts/check-encoding.sh"
+  },
   "openclaw": {
     "extensions": [
       "./index.ts"
@@ -34,10 +43,10 @@
     "channel": {
       "id": "dingtalk",
       "label": "DingTalk",
-      "selectionLabel": "DingTalk",
+      "selectionLabel": "DingTalk (钉钉)",
       "docsPath": "/channels/dingtalk",
       "docsLabel": "dingtalk",
-      "blurb": "DingTalk enterprise messaging.",
+      "blurb": "钉钉企业消息机器人 (Stream 模式)",
       "aliases": [
         "dingding",
         "dd"
@@ -45,9 +54,9 @@
       "order": 75
     },
     "install": {
-      "npmSpec": "@wulien/openclaw-dingtalk",
+      "npmSpec": "dingtalk",
       "localPath": ".",
-      "defaultChoice": "npm"
+      "defaultChoice": "local"
     }
   },
   "dependencies": {
@@ -63,5 +72,8 @@
   },
   "peerDependencies": {
     "openclaw": ">=2026.1.29"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

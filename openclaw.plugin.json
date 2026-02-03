@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "dingtalk",
   "channels": ["dingtalk"],
   "skills": ["./skills"],
